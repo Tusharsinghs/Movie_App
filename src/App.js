@@ -5,8 +5,8 @@ import MovieBox from './MovieBox';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar,Container,Nav,Form, FormControl,Button } from 'react-bootstrap';
 
-const API_URL="https://api.themoviedb.org/3/movie/popular?api_key=c86e66d36903c082d70dc1647e65cf3d"
-const API_SEARCH="https://api.themoviedb.org/3/search/movie?api_key=c86e66d36903c082d70dc1647e65cf3d&query";
+const API_URL="https://api.themoviedb.org/3/movie/popular?api_key=<<API_KEY>>"
+const API_SEARCH="https://api.themoviedb.org/3/search/movie?api_key=<<API_KEY>>&query";
 
 function App() {
   const [movies,setMovies]=useState([]);
@@ -25,7 +25,7 @@ function App() {
     e.preventDefault();
     console.log("Searching");
     try{
-      const url=`https://api.themoviedb.org/3/search/movie?api_key=c86e66d36903c082d70dc1647e65cf3d&query=${query}`;
+      const url=`https://api.themoviedb.org/3/search/movie?api_key=<<API_KEY>>&query=${query}`;
       const res= await fetch(url);
       const data= await res.json();
       console.log(data);
